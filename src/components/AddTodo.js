@@ -18,7 +18,7 @@ const AddTodo = ({ addTodo }) => {
                 value={todo}
                 onChange={e => setTodo(e.target.value)}
             />
-            <button onClick={handleAdd}>添加事务</button>
+            <button onClick={handleAdd}>添加</button>
         </div>
     );
 };

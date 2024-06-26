@@ -1,5 +1,5 @@
 // src/reducers/index.js
-import { ADD_TODO, TOGGLE_TODO, SET_FILTER, UNDO, REDO, Filters } from '../actions';
+import { ADD_TODO, TOGGLE_TODO, SET_FILTER, UNDO, REDO, EDIT_TODO, DELETE_TODO, Filters } from '../actions';
 
 const initialState = {
   todos: [],
@@ -46,6 +46,22 @@ const todoReducer = (state = initialState, action) => {
         ...next,
         history: [...state.history, state],
         future: state.future.slice(1),
+      };
+    case EDIT_TODO:
+      return {
+        ...state,
+        todos: state.todos.map((todo, index) =>
+          index === action.index ? { ...todo, text: action.newText } : todo
+        ),
+        history: [...state.history, state],
+        future: [],
+      };
+    case DELETE_TODO:
+      return {
+        ...state,
+        todos: state.todos.filter((_, index) => index !== action.index),
+        history: [...state.history, state],
+        future: [],
       };
     default:
       return state;

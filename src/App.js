@@ -7,7 +7,7 @@ import FilterContainer from './containers/FilterContainer';
 
 const App = () => (
   <div className="container">
-    <h1>事务管理系统</h1>
+    <h1>Todo-app</h1>
     <AddTodoContainer />
     <FilterContainer />
     <TodoListContainer />

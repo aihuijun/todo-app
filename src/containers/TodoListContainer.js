@@ -1,7 +1,7 @@
 // src/containers/TodoListContainer.js
 import { connect } from 'react-redux';
 import TodoList from '../components/TodoList';
-import { toggleTodo } from '../actions';
+import { toggleTodo, editTodo, deleteTodo } from '../actions';
 import { Filters } from '../actions';
 
 const getVisibleTodos = (todos, filter) => {
@@ -23,6 +23,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   toggleTodo: (index) => dispatch(toggleTodo(index)),
+  editTodo: (index, newText) => dispatch(editTodo(index, newText)),
+  deleteTodo: (index) => dispatch(deleteTodo(index)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

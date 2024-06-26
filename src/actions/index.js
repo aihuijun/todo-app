@@ -4,6 +4,8 @@ export const TOGGLE_TODO = 'TOGGLE_TODO';
 export const SET_FILTER = 'SET_FILTER';
 export const UNDO = 'UNDO';
 export const REDO = 'REDO';
+export const EDIT_TODO = 'EDIT_TODO';
+export const DELETE_TODO = 'DELETE_TODO';
 
 export const addTodo = (text) => ({
   type: ADD_TODO,
@@ -26,6 +28,17 @@ export const undo = () => ({
 
 export const redo = () => ({
   type: REDO,
+});
+
+export const editTodo = (index, newText) => ({
+  type: EDIT_TODO,
+  index,
+  newText,
+});
+
+export const deleteTodo = (index) => ({
+  type: DELETE_TODO,
+  index,
 });
 
 export const Filters = {

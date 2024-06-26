@@ -3,8 +3,8 @@ import React from 'react';
 
 const UndoRedo = ({ canUndo, canRedo, undo, redo }) => (
     <div className="undo-redo">
-        <button onClick={undo} disabled={!canUndo}>撤销</button>
-        <button onClick={redo} disabled={!canRedo}>恢复</button>
+        <button onClick={undo} disabled={!canUndo}>undo</button>
+        <button onClick={redo} disabled={!canRedo}>redo</button>
     </div>
 );
 
